@@ -11,9 +11,9 @@ function alea(min, max) { // [0;15[
   return Math.floor((Math.random() * (max - min)) + min)
 }
 
-const liste_tuile = []; /* liste des tuiles : i = position dans puzzlearea, liste_tuile[i] = numéro de la tuile */
+const liste_tuile = []; /* liste des tuiles : i = position de la case dans puzzlearea, liste_tuile[i] = numéro de la tuile */
 
-/* Cette fonction calcule les coordonées de la tuile à la position n de puzzlearea (le n passé en paramètre est l'index de la liste liste_tuile) et positionne la tuile liste_tuile[n] au bon endroit*/
+/* Cette fonction calcule les coordonnées de la tuile à la position n de puzzlearea (le n passé en paramètre est l'index de la liste liste_tuile) et positionne la tuile liste_tuile[n] au bon endroit*/
 function set_tile_position(n) {
   var num_tile = liste_tuile[n];
   var row = Math.floor(n / 4);
@@ -31,7 +31,7 @@ for (var i = 0; i < 16; i++) {
   set_tile_position(i);
 }
 
-/* Cette fonction trie liste_tuile d'une manière aléatoire et repositionne les tuiles*/
+/* Cette fonction trie liste_tuile d'une manière aléatoire et repositionne les tuiles. Le tri pour la tuile de numéro i - pioche un nombre j au hasard dans l'intervalle [0, i], échange les valeurs de liste_tuile[i] et liste_tuile[j], ainsi la tuile de numéro i (index de la liste liste_tuile) à pour nouvelle position la valeur de liste_tuile[j] (qui est le numéro de la case dans puzzlearea). a la fin de chaque itération l'intervalle est réduit*/
 function shuffle() {
   for (var i = 15; i >= 0; i--) {
     var j = alea(0, i);
