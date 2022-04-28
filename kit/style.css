@@ -34,13 +34,14 @@ et indiquerez, en commentaire, ce que produit cette propri´et´e en terme de re
 * {
     color: #616457;
     background-repeat: no-repeat;
+    font-family: sans-serif;
 
 }
 
 body {
 
     background: #c5c7b4;
-    font-family: sans-serif;
+    
 }
 
 body>h1 {
@@ -55,7 +56,8 @@ body>h1 {
 }
 
 #shuffle:hover {
-    background-color: red;
+    background-color: #616457;
+    color: #c5c7b4 ;
 }
 
 #puzzlearea {
@@ -63,7 +65,7 @@ body>h1 {
     display: flex;
     position: relative;
     box-sizing: content-box;
-    margin-top: 20px;
+    margin-top: 25px;
     height: 360px;
     width: 360px;
     border: solid black 1px;
@@ -82,6 +84,8 @@ body>h1 {
 }
 
 .tuile>p {
+    color: rgb(82, 73, 73);
+    font-size: 110%;
     text-shadow: 1px 0 0 #fff,
         -1px 0 0 #fff,
         0 1px 0 #fff,
