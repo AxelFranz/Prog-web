@@ -5,30 +5,6 @@ Prénom : Axel
 NOM : ARUST
 Prénom : Laura
 
-
-Vous avez certainement remarqu´e que le fichier index.html contient un conteneur portant l’identifiant
-puzzlearea : il s’agit de la zone de jeu, dans laquelle vous allez placer les fragments de l’images (les tuiles).
-1. D´efinissez un style pour la zone de jeu : la hauteur et la largeur maximales doivent permettre de
-pouvoir contenir exactement 4 tuiles (cf. point 2 pour la dimension d’une tuile).
-2. D´efinissez un style pour la classe .tuile : d´efinissez une bordure de 1 pixel grise ; la hauteur et la
-largeur totales d’une tuile doivent toutes deux faire exactement 90 pixel (ni plus ni moins).
-3. Les fragments d’images qui seront charg´ees comme background (avec Javascript) dans les tuiles ont
-une dimension sup´erieure `a la dimension des tuiles. Vous n’avez pas le droit de redimensionner les images,
-vous devez donc trouver la propri´et´e CSS qui permettra de faire tenir chaque fragment en entier dans
-leur tuile. Ajoutez cette propri´et´e `a votre classe .tuile.
-4. Pour aider `a la r´esolution du puzzle, on ´ecrira (dans la partie suivante, avec Javascript) le num´ero des
-tuiles dans chacune d’elles. Vous devez d´efinir un style qui s’appliquera sp´ecifiquement aux paragraphes
-contenus dans les tuiles : le texte doit ˆetre centr´e et de couleur gris fonc´e, la taille de fonte 10% plus
-grande que la taille de fonte par d´efaut. Vous ajouterez en outre la propri´et´e donn´ee suivante :
-text-shadow: 1px 0 0 #fff,
--1px 0 0 #fff,
-0 1px 0 #fff,
-0 -1px 0 #fff,
-1px 1px #fff,
--1px -1px 0 #fff,
-1px -1px 0 #fff,
--1px 1px 0 #fff;
-et indiquerez, en commentaire, ce que produit cette propri´et´e en terme de rendu.
 */
 
 * {
