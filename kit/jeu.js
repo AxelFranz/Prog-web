@@ -11,6 +11,7 @@ function alea(min, max) { // [0;15[
   return Math.floor((Math.random() * (max - min)) + min)
 }
 
+var game_started = true; 
 const liste_tuile = []; /* liste des tuiles : i = position de la case dans puzzlearea, liste_tuile[i] = numéro de la tuile */
 const liste_finale = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]; /* J'initalise une liste dans le bon ordre pour n'avoir qu'une seule déclaration du puzzle fini*/
 
@@ -49,6 +50,7 @@ function init() {
 
 /* Cette fonction trie liste_tuile d'une manière aléatoire et repositionne les tuiles.*/
 function shuffle() {
+	game_started = true;
   for (var i = 15; i >= 0; i--) {
     	var j = alea(0, i);
     	var temp = liste_tuile[i];
@@ -69,13 +71,16 @@ function swap(elem1,elem2) {
 
 function puzzle_solved(){
 	if(isEqual(liste_tuile,liste_finale)){
+			game_started = false;
 			$("#output").text("Le puzzle est résolu");
-			$(".tuile").off("click"); // L'écouteur d'évènement est détaché
+			//$(".tuile").off("click"); // L'écouteur d'évènement est détaché
 		}
 	}
 
 /* Permet de bouger les cases et vérifie si le puzzle est fini */
 function check_and_swap(elem) {
+	if (!game_started)
+		return;
 	var idCase = parseInt(elem.id);
 	var index = liste_tuile.indexOf(idCase);
 	if (liste_tuile[index + 1] == 15)
